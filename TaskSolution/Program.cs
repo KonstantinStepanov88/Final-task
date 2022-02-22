@@ -16,4 +16,31 @@ void PrintArray(string[] array)
     }
     Console.Write("]");
 }
+
+int NewArraySize(string[] array)
+{
+    int numberForSize = 0;
+    for (int i = 0; i < array.Length;i++)
+    {
+        if (array[i].Length < 4)
+            numberForSize++;
+    }
+    return numberForSize;
+}
+
+string[] NewArray(string[] array, int NewArraySize)
+{
+    string[] NewArray = new string[NewArraySize];
+    int j = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length < 4)
+            NewArray[j] = array[i];
+            j++;
+    }
+    return NewArray;
+}
+
+
+
 PrintArray(StartArray);
